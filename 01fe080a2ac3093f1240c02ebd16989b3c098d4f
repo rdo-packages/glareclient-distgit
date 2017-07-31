@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_68a59f03",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2017-07-31T14:13:44Z",
+      "side": 1,
+      "message": "Use %python2_version instead, the same for %python3_version",
+      "revId": "01fe080a2ac3093f1240c02ebd16989b3c098d4f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_e8b8af2c",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2017-07-31T14:13:44Z",
+      "side": 1,
+      "message": "Use %py_req_cleanup instead.",
+      "revId": "01fe080a2ac3093f1240c02ebd16989b3c098d4f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_08b6db3d",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2017-07-31T14:13:44Z",
+      "side": 1,
+      "message": "Unneeded",
+      "revId": "01fe080a2ac3093f1240c02ebd16989b3c098d4f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_2882b752",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2017-07-31T14:13:44Z",
+      "side": 1,
+      "message": "%py2_build",
+      "revId": "01fe080a2ac3093f1240c02ebd16989b3c098d4f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_48870362",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2017-07-31T14:13:44Z",
+      "side": 1,
+      "message": "%py3_build",
+      "revId": "01fe080a2ac3093f1240c02ebd16989b3c098d4f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_687cbf73",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2017-07-31T14:13:44Z",
+      "side": 1,
+      "message": "%py2_install",
+      "revId": "01fe080a2ac3093f1240c02ebd16989b3c098d4f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
