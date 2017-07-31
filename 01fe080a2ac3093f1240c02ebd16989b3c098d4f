@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_a86ce737",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-07-31T21:19:00Z",
+      "side": 1,
+      "message": "should this be python3-tools?",
+      "range": {
+        "startLine": 65,
+        "startChar": 16,
+        "endLine": 65,
+        "endChar": 22
+      },
+      "revId": "01fe080a2ac3093f1240c02ebd16989b3c098d4f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_e8b8af2c",
         "filename": "python-glareclient.spec",
         "patchSetId": 1
