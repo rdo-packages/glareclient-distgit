@@ -22,6 +22,30 @@
       "revId": "725622b39943797a0e74b983481903ac47effda3",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_65094195",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 362
+      },
+      "writtenOn": "2017-08-10T14:22:55Z",
+      "side": 1,
+      "message": "Yep, makes sense.",
+      "parentUuid": "5a890539_e5cd315f",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 35
+      },
+      "revId": "725622b39943797a0e74b983481903ac47effda3",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
