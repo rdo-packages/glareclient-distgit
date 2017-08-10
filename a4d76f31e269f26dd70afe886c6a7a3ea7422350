@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_8509cd2e",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-10T11:09:12Z",
+      "side": 1,
+      "message": "Missing:\n\nBuildRequires: python-oslo-sphinx",
+      "revId": "a4d76f31e269f26dd70afe886c6a7a3ea7422350",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_6504e115",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-10T11:09:12Z",
+      "side": 1,
+      "message": "py_req_cleanup is replacement for:\n\nrm -f test-requirements.txt requirements.txt\n\nBut you still need to keep:\n\n# Remove bundled egg-info\nrm -rf %{pypi_name}.egg-info",
+      "revId": "a4d76f31e269f26dd70afe886c6a7a3ea7422350",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_45ffe501",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-10T11:09:12Z",
+      "side": 1,
+      "message": "Don\u0027t need to remove the tests, we tipically provide them in a separate -tests package",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 55
+      },
+      "revId": "a4d76f31e269f26dd70afe886c6a7a3ea7422350",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2a038610",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-10T11:09:12Z",
+      "side": 1,
+      "message": "Would it be possible to run unit tests in %check section?",
+      "revId": "a4d76f31e269f26dd70afe886c6a7a3ea7422350",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
