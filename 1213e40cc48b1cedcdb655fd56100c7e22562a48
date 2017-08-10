@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_e5229100",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2017-08-10T14:38:12Z",
+      "side": 1,
+      "message": "I would replace it with %{sname}",
+      "range": {
+        "startLine": 26,
+        "startChar": 42,
+        "endLine": 26,
+        "endChar": 53
+      },
+      "revId": "1213e40cc48b1cedcdb655fd56100c7e22562a48",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_85838dcb",
+        "filename": "python-glareclient.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2017-08-10T14:38:12Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 68,
+        "startChar": 42,
+        "endLine": 68,
+        "endChar": 53
+      },
+      "revId": "1213e40cc48b1cedcdb655fd56100c7e22562a48",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
