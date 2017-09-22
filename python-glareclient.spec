@@ -48,13 +48,14 @@ BuildRequires:       python-mock
 BuildRequires:       python-requests-mock
 
 Requires:       python-cliff >= 2.3.0
-Requires:       python-keystoneclient >= 1:3.8.0
-Requires:       python-openstackclient >= 1.5.0
-Requires:       python-osc-lib >= 1.2.0
+Requires:       python-keystoneauth1 >= 2.21.0
+Requires:       python-osc-lib >= 1.5.1
 Requires:       python-oslo-i18n >= 2.1.0
-Requires:       python-oslo-utils >= 3.18.0
+Requires:       python-oslo-log >= 3.22.0
+Requires:       python-oslo-utils >= 3.20.0
 Requires:       python-osprofiler
 Requires:       python-pbr
+Requires:       python-prettytable
 Requires:       python-requests >= 2.10.0
 Requires:       python-six >= 1.9.0
 
@@ -89,13 +90,14 @@ BuildRequires:       python3-mock
 BuildRequires:       python3-requests-mock
 
 Requires:       python3-cliff >= 2.3.0
-Requires:       python3-keystoneclient >= 1:3.8.0
-Requires:       python3-openstackclient >= 1.5.0
-Requires:       python3-osc-lib >= 1.2.0
+Requires:       python3-keystoneauth1 >= 2.21.0
+Requires:       python3-osc-lib >= 1.5.1
 Requires:       python3-oslo-i18n >= 2.1.0
-Requires:       python3-oslo-utils >= 3.18.0
+Requires:       python3-oslo-log >= 3.22.0
+Requires:       python3-oslo-utils >= 3.20.0
 Requires:       python3-osprofiler
 Requires:       python3-pbr
+Requires:       python3-prettytable
 Requires:       python3-requests >= 2.10.0
 Requires:       python3-six >= 1.9.0
 
