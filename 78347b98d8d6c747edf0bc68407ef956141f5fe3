@@ -1,0 +1,9 @@
+Code-Review+2: Javier Peña <jpena@redhat.com>
+Code-Review+2: Mike Fedosin <mfedosin@gmail.com>
+Workflow+1: Mike Fedosin <mfedosin@gmail.com>
+Verified+2: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-by: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-at: Thu, 28 Sep 2017 21:48:05 +0000
+Reviewed-on: https://review.rdoproject.org/r/9824
+Project: openstack/glareclient-distgit
+Branch: refs/heads/rpm-master
