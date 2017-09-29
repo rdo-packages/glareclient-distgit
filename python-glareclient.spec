@@ -121,7 +121,7 @@ This package contains auto-generated documentation.
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
 
-%py_req_cleanup
+rm -rf *requirements.txt
 
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
