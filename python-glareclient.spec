@@ -28,6 +28,7 @@ BuildRequires:       python2-devel
 BuildRequires:       python-setuptools
 BuildRequires:       python-pbr
 BuildRequires:       git
+BuildRequires:       openstack-macros
 BuildRequires:       python-cliff >= 2.3.0
 BuildRequires:       python-keystoneclient >= 1:3.8.0
 BuildRequires:       python-openstackclient >= 1.5.0
