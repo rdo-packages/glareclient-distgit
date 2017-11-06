@@ -7,7 +7,7 @@
 %endif
 
 Name:    python-glareclient
-Version: 0.4.2
+Version: 0.4.3
 Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Glare
 
@@ -196,6 +196,9 @@ rm -rf .testrepository
 %license LICENSE
 
 %changelog
+* Mon Nov 06 2017 RDO <dev@lists.rdoproject.org> 0.4.3-1
+- Update to 0.4.3
+
 * Fri Sep 29 2017 Alfredo Moralejo <amoralej@redhat.com> 0.4.2-1
 - Update to 0.4.2
 
