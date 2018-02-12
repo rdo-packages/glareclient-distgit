@@ -25,39 +25,51 @@ Command Line Interface (CLI) library and openstackclient plugin.
 Summary: Python API and CLI for OpenStack Glare
 %{?python_provide:%python_provide python2-%{sname}}
 BuildRequires:       python2-devel
-BuildRequires:       python-setuptools
-BuildRequires:       python-pbr
+BuildRequires:       python2-setuptools
+BuildRequires:       python2-pbr
 BuildRequires:       git
-BuildRequires:       python-cliff >= 2.3.0
-BuildRequires:       python-keystoneclient >= 1:3.8.0
-BuildRequires:       python-openstackclient >= 1.5.0
-BuildRequires:       python-oslo-i18n >= 2.1.0
-BuildRequires:       python-oslo-utils >= 3.18.0
-BuildRequires:       python-osprofiler
-BuildRequires:       python-requests >= 2.10.0
-BuildRequires:       python-six >= 1.9.0
+BuildRequires:       python2-keystoneclient >= 1:3.8.0
+BuildRequires:       python2-openstackclient >= 1.5.0
+BuildRequires:       python2-oslo-i18n >= 2.1.0
+BuildRequires:       python2-oslo-utils >= 3.20.0
+BuildRequires:       python2-osprofiler
+BuildRequires:       python2-requests >= 2.14.2
+BuildRequires:       python2-six >= 1.9.0
 
 # Required for tests
-BuildRequires:       python-os-testr
-BuildRequires:       python-oslotest
-BuildRequires:       python-osc-lib-tests
-BuildRequires:       python-testrepository
-BuildRequires:       python-testscenarios
-BuildRequires:       python-testtools
-BuildRequires:       python-mock
-BuildRequires:       python-requests-mock
+BuildRequires:       python2-os-testr
+BuildRequires:       python2-oslotest
+BuildRequires:       python2-osc-lib-tests
+BuildRequires:       python2-testrepository
+BuildRequires:       python2-testscenarios
+BuildRequires:       python2-testtools
+BuildRequires:       python2-mock
 
+%if 0%{?fedora} || 0%{?rhel} > 7
+BuildRequires:       python2-cliff >= 2.3.0
+BuildRequires:       python2-requests-mock
+%else
+BuildRequires:       python-cliff >= 2.3.0
+BuildRequires:       python-requests-mock
+%endif
+
+Requires:       python2-cliff >= 2.3.0
+Requires:       python2-keystoneauth1 >= 3.1.0
+Requires:       python2-osc-lib >= 1.7.0
+Requires:       python2-oslo-i18n >= 3.15.2
+Requires:       python2-oslo-log >= 3.22.0
+Requires:       python2-oslo-utils >= 3.20.0
+Requires:       python2-osprofiler
+Requires:       python2-pbr
+Requires:       python2-requests >= 2.14.2
+Requires:       python2-six >= 1.9.0
+%if 0%{?fedora} || 0%{?rhel} > 7
+Requires:       python2-cliff >= 2.3.0
+Requires:       python2-prettytable
+%else
 Requires:       python-cliff >= 2.3.0
-Requires:       python-keystoneauth1 >= 2.21.0
-Requires:       python-osc-lib >= 1.5.1
-Requires:       python-oslo-i18n >= 2.1.0
-Requires:       python-oslo-log >= 3.22.0
-Requires:       python-oslo-utils >= 3.20.0
-Requires:       python-osprofiler
-Requires:       python-pbr
 Requires:       python-prettytable
-Requires:       python-requests >= 2.10.0
-Requires:       python-six >= 1.9.0
+%endif
 
 %description -n python2-%{sname}
 Python client for Glare REST API. Includes python library for Glare API,
@@ -109,8 +121,8 @@ Command Line Interface (CLI) library and openstackclient plugin.
 %package doc
 Summary: Documentation for OpenStack Glare API Client
 
-BuildRequires: python-sphinx
-BuildRequires: python-oslo-sphinx
+BuildRequires: python2-sphinx
+BuildRequires: python2-oslo-sphinx
 
 %description doc
 Python client for Glare REST API. Includes python library for Glare API,
