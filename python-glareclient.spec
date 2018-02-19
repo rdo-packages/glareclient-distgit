@@ -7,8 +7,8 @@
 %endif
 
 Name:    python-glareclient
-Version: XXX
-Release: XXX
+Version: 0.5.2
+Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Glare
 
 License: ASL 2.0
@@ -205,3 +205,6 @@ rm -rf .testrepository
 %license LICENSE
 
 %changelog
+* Mon Feb 19 2018 RDO <dev@lists.rdoproject.org> 0.5.2-1
+- Update to 0.5.2
+
