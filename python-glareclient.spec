@@ -31,11 +31,11 @@ BuildRequires:       git
 BuildRequires:       python2-cliff >= 2.3.0
 BuildRequires:       python2-keystoneclient >= 1:3.8.0
 BuildRequires:       python2-openstackclient >= 1.5.0
-BuildRequires:       python2-oslo-i18n >= 2.1.0
-BuildRequires:       python2-oslo-utils >= 3.20.0
+BuildRequires:       python2-oslo-i18n >= 3.15.3
+BuildRequires:       python2-oslo-utils >= 3.33.0
 BuildRequires:       python2-osprofiler
 BuildRequires:       python2-requests >= 2.14.2
-BuildRequires:       python2-six >= 1.9.0
+BuildRequires:       python2-six >= 1.10.0
 
 # Required for tests
 BuildRequires:       python2-os-testr
@@ -53,15 +53,15 @@ BuildRequires:       python-requests-mock
 %endif
 
 Requires:       python2-cliff >= 2.3.0
-Requires:       python2-keystoneauth1 >= 3.1.0
+Requires:       python2-keystoneauth1 >= 3.4.0
 Requires:       python2-osc-lib >= 1.7.0
-Requires:       python2-oslo-i18n >= 3.15.2
-Requires:       python2-oslo-log >= 3.22.0
-Requires:       python2-oslo-utils >= 3.20.0
+Requires:       python2-oslo-i18n >= 3.15.3
+Requires:       python2-oslo-log >= 3.36.0
+Requires:       python2-oslo-utils >= 3.33.0
 Requires:       python2-osprofiler
 Requires:       python2-pbr
 Requires:       python2-requests >= 2.14.2
-Requires:       python2-six >= 1.9.0
+Requires:       python2-six >= 1.10.0
 %if 0%{?fedora} || 0%{?rhel} > 7
 Requires:       python2-prettytable
 %else
@@ -82,11 +82,11 @@ BuildRequires:       python3-pbr
 BuildRequires:       python3-cliff >= 2.3.0
 BuildRequires:       python3-keystoneclient >= 1:3.8.0
 BuildRequires:       python3-openstackclient >= 1.5.0
-BuildRequires:       python3-oslo-i18n >= 2.1.0
-BuildRequires:       python3-oslo-utils >= 3.18.0
+BuildRequires:       python3-oslo-i18n >= 3.15.3
+BuildRequires:       python3-oslo-utils >= 3.33.0
 BuildRequires:       python3-osprofiler
 BuildRequires:       python3-requests >= 2.10.0
-BuildRequires:       python3-six >= 1.9.0
+BuildRequires:       python3-six >= 1.10.0
 
 # Required for tests
 BuildRequires:       python3-os-testr
@@ -99,16 +99,16 @@ BuildRequires:       python3-mock
 BuildRequires:       python3-requests-mock
 
 Requires:       python3-cliff >= 2.3.0
-Requires:       python3-keystoneauth1 >= 2.21.0
+Requires:       python3-keystoneauth1 >= 3.4.0
 Requires:       python3-osc-lib >= 1.5.1
-Requires:       python3-oslo-i18n >= 2.1.0
-Requires:       python3-oslo-log >= 3.22.0
-Requires:       python3-oslo-utils >= 3.20.0
+Requires:       python3-oslo-i18n >= 3.15.3
+Requires:       python3-oslo-log >= 3.36.0
+Requires:       python3-oslo-utils >= 3.33.0
 Requires:       python3-osprofiler
 Requires:       python3-pbr
 Requires:       python3-prettytable
 Requires:       python3-requests >= 2.10.0
-Requires:       python3-six >= 1.9.0
+Requires:       python3-six >= 1.10.0
 
 %description -n python3-%{sname}
 Python client for Glare REST API. Includes python library for Glare API,
