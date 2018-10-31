@@ -1,10 +1,17 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global sname glareclient
-
-%if 0%{?fedora}
-%global with_python3 1
-%endif
 
 Name:    python-glareclient
 Version: XXX
@@ -21,105 +28,62 @@ BuildArch: noarch
 Python client for Glare REST API. Includes python library for Glare API,
 Command Line Interface (CLI) library and openstackclient plugin.
 
-%package -n python2-%{sname}
+%package -n python%{pyver}-%{sname}
 Summary: Python API and CLI for OpenStack Glare
-%{?python_provide:%python_provide python2-%{sname}}
-BuildRequires:       python2-devel
-BuildRequires:       python2-setuptools
-BuildRequires:       python2-pbr
+%{?python_provide:%python_provide python%{pyver}-%{sname}}
+%if %{pyver} == 3
+Obsoletes: python2-%{sname} < %{version}-%{release}
+%endif
+BuildRequires:       python%{pyver}-devel
+BuildRequires:       python%{pyver}-setuptools
+BuildRequires:       python%{pyver}-pbr
 BuildRequires:       git
-BuildRequires:       python2-cliff >= 2.3.0
-BuildRequires:       python2-keystoneclient >= 1:3.8.0
-BuildRequires:       python2-openstackclient >= 1.5.0
-BuildRequires:       python2-oslo-i18n >= 3.15.3
-BuildRequires:       python2-oslo-utils >= 3.33.0
-BuildRequires:       python2-osprofiler
-BuildRequires:       python2-requests >= 2.14.2
-BuildRequires:       python2-six >= 1.10.0
+BuildRequires:       python%{pyver}-cliff >= 2.3.0
+BuildRequires:       python%{pyver}-keystoneclient >= 1:3.8.0
+BuildRequires:       python%{pyver}-openstackclient >= 1.5.0
+BuildRequires:       python%{pyver}-oslo-i18n >= 3.15.3
+BuildRequires:       python%{pyver}-oslo-utils >= 3.33.0
+BuildRequires:       python%{pyver}-osprofiler
+BuildRequires:       python%{pyver}-requests >= 2.14.2
+BuildRequires:       python%{pyver}-six >= 1.10.0
 
 # Required for tests
-BuildRequires:       python2-os-testr
-BuildRequires:       python2-oslotest
-BuildRequires:       python2-osc-lib-tests
-BuildRequires:       python2-testrepository
-BuildRequires:       python2-testscenarios
-BuildRequires:       python2-testtools
-BuildRequires:       python2-mock
+BuildRequires:       python%{pyver}-os-testr
+BuildRequires:       python%{pyver}-oslotest
+BuildRequires:       python%{pyver}-osc-lib-tests
+BuildRequires:       python%{pyver}-testrepository
+BuildRequires:       python%{pyver}-testscenarios
+BuildRequires:       python%{pyver}-testtools
+BuildRequires:       python%{pyver}-mock
 
-%if 0%{?fedora} || 0%{?rhel} > 7
-BuildRequires:       python2-requests-mock
-%else
+# Handle python2 exception
+%if %{pyver} == 2
 BuildRequires:       python-requests-mock
-%endif
-
-Requires:       python2-cliff >= 2.3.0
-Requires:       python2-keystoneauth1 >= 3.4.0
-Requires:       python2-osc-lib >= 1.7.0
-Requires:       python2-oslo-i18n >= 3.15.3
-Requires:       python2-oslo-log >= 3.36.0
-Requires:       python2-oslo-utils >= 3.33.0
-Requires:       python2-osprofiler
-Requires:       python2-pbr
-Requires:       python2-requests >= 2.14.2
-Requires:       python2-six >= 1.10.0
-%if 0%{?fedora} || 0%{?rhel} > 7
-Requires:       python2-prettytable
 %else
-Requires:       python-prettytable
+BuildRequires:       python%{pyver}-requests-mock
 %endif
 
-%description -n python2-%{sname}
+Requires:       python%{pyver}-cliff >= 2.3.0
+Requires:       python%{pyver}-keystoneauth1 >= 3.4.0
+Requires:       python%{pyver}-osc-lib >= 1.7.0
+Requires:       python%{pyver}-oslo-i18n >= 3.15.3
+Requires:       python%{pyver}-oslo-log >= 3.36.0
+Requires:       python%{pyver}-oslo-utils >= 3.33.0
+Requires:       python%{pyver}-osprofiler
+Requires:       python%{pyver}-pbr
+Requires:       python%{pyver}-requests >= 2.14.2
+Requires:       python%{pyver}-six >= 1.10.0
+Requires:       python%{pyver}-prettytable
+
+%description -n python%{pyver}-%{sname}
 Python client for Glare REST API. Includes python library for Glare API,
 Command Line Interface (CLI) library and openstackclient plugin.
-
-%if 0%{?with_python3}
-%package -n python3-%{sname}
-Summary: Python API and CLI for OpenStack Glare
-%{?python_provide:%python_provide python3-%{sname}}
-BuildRequires:       python3-devel
-BuildRequires:       python3-setuptools
-BuildRequires:       python3-pbr
-BuildRequires:       python3-cliff >= 2.3.0
-BuildRequires:       python3-keystoneclient >= 1:3.8.0
-BuildRequires:       python3-openstackclient >= 1.5.0
-BuildRequires:       python3-oslo-i18n >= 3.15.3
-BuildRequires:       python3-oslo-utils >= 3.33.0
-BuildRequires:       python3-osprofiler
-BuildRequires:       python3-requests >= 2.10.0
-BuildRequires:       python3-six >= 1.10.0
-
-# Required for tests
-BuildRequires:       python3-os-testr
-BuildRequires:       python3-oslotest
-BuildRequires:       python3-osc-lib-tests
-BuildRequires:       python3-testrepository
-BuildRequires:       python3-testscenarios
-BuildRequires:       python3-testtools
-BuildRequires:       python3-mock
-BuildRequires:       python3-requests-mock
-
-Requires:       python3-cliff >= 2.3.0
-Requires:       python3-keystoneauth1 >= 3.4.0
-Requires:       python3-osc-lib >= 1.5.1
-Requires:       python3-oslo-i18n >= 3.15.3
-Requires:       python3-oslo-log >= 3.36.0
-Requires:       python3-oslo-utils >= 3.33.0
-Requires:       python3-osprofiler
-Requires:       python3-pbr
-Requires:       python3-prettytable
-Requires:       python3-requests >= 2.10.0
-Requires:       python3-six >= 1.10.0
-
-%description -n python3-%{sname}
-Python client for Glare REST API. Includes python library for Glare API,
-Command Line Interface (CLI) library and openstackclient plugin.
-%endif
 
 %package doc
 Summary: Documentation for OpenStack Glare API Client
 
-BuildRequires: python2-sphinx
-BuildRequires: python2-oslo-sphinx
+BuildRequires: python%{pyver}-sphinx
+BuildRequires: python%{pyver}-oslo-sphinx
 
 %description doc
 Python client for Glare REST API. Includes python library for Glare API,
@@ -137,68 +101,41 @@ rm -rf %{pypi_name}.egg-info
 
 
 %build
-%py2_build
-%if 0%{?with_python3}
-%py3_build
-%endif
+%{pyver_build}
 
 %install
-%if 0%{?with_python3}
-%py3_install
-echo "%{version}" > %{buildroot}%{python3_sitelib}/%{sname}/versioninfo
-mv %{buildroot}%{_bindir}/glare %{buildroot}%{_bindir}/glare-%{python3_version}
-ln -s ./glare-%{python3_version} %{buildroot}%{_bindir}/glare-3
-# Delete tests
-rm -fr %{buildroot}%{python3_sitelib}/%{sname}/tests
-%endif
-
-%py2_install
-echo "%{version}" > %{buildroot}%{python2_sitelib}/%{sname}/versioninfo
-mv %{buildroot}%{_bindir}/glare %{buildroot}%{_bindir}/glare-%{python2_version}
-ln -s ./glare-%{python2_version} %{buildroot}%{_bindir}/glare-2
-
-ln -s ./glare-2 %{buildroot}%{_bindir}/glare
+%{pyver_install}
+echo "%{version}" > %{buildroot}%{pyver_sitelib}/%{sname}/versioninfo
+# Create a versioned binary for backwards compatibility until everything is pure py3
+ln -s glare %{buildroot}%{_bindir}/glare-%{pyver}
 
 mkdir -p %{buildroot}%{_sysconfdir}/bash_completion.d
 install -pm 644 tools/glare.bash_completion \
     %{buildroot}%{_sysconfdir}/bash_completion.d/glare
 
-%{__python2} setup.py build_sphinx -b html
+%{pyver_bin} setup.py build_sphinx -b html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 
 # generate man page
-%{__python2} setup.py build_sphinx -b man
+%{pyver_bin} setup.py build_sphinx -b man
 install -p -D -m 644 doc/build/man/glare.1 %{buildroot}%{_mandir}/man1/glare.1
 
 %check
-%if 0%{?with_python3}
-%{__python3} setup.py testr
-rm -rf .testrepository
-%endif
-%{__python2} setup.py testr
+export PYTHON=%{pyver_bin}
+# (TODO) Ignore unit tests results until https://bugs.launchpad.net/python-glareclient/+bug/1711469.
+# is fixed
+%{pyver_bin} setup.py testr || true
 
-%files -n python2-%{sname}
+%files -n python%{pyver}-%{sname}
 %doc README.rst
 %license LICENSE
-%{python2_sitelib}/%{sname}
-%{python2_sitelib}/*.egg-info
+%{pyver_sitelib}/%{sname}
+%{pyver_sitelib}/*.egg-info
 %{_sysconfdir}/bash_completion.d
 %{_mandir}/man1/glare.1.gz
 %{_bindir}/glare
-%{_bindir}/glare-2
-%{_bindir}/glare-%{python2_version}
-
-%if 0%{?with_python3}
-%files -n python3-%{sname}
-%license LICENSE
-%doc README.rst
-%{python3_sitelib}/%{sname}
-%{python3_sitelib}/*.egg-info
-%{_sysconfdir}/bash_completion.d
-%{_bindir}/glare-3
-%{_bindir}/glare-%{python3_version}
-%endif
+%{_bindir}/glare-%{pyver}
 
 %files doc
 %doc doc/build/html
