@@ -12,6 +12,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global sname glareclient
+%global with_doc 1
 
 Name:    python-glareclient
 Version: XXX
@@ -79,6 +80,7 @@ Requires:       python%{pyver}-prettytable
 Python client for Glare REST API. Includes python library for Glare API,
 Command Line Interface (CLI) library and openstackclient plugin.
 
+%if 0%{?with_doc}
 %package doc
 Summary: Documentation for OpenStack Glare API Client
 
@@ -90,6 +92,7 @@ Python client for Glare REST API. Includes python library for Glare API,
 Command Line Interface (CLI) library and openstackclient plugin.
 
 This package contains auto-generated documentation.
+%endif
 
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
@@ -113,6 +116,7 @@ mkdir -p %{buildroot}%{_sysconfdir}/bash_completion.d
 install -pm 644 tools/glare.bash_completion \
     %{buildroot}%{_sysconfdir}/bash_completion.d/glare
 
+%if 0%{?with_doc}
 %{pyver_bin} setup.py build_sphinx -b html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
@@ -120,6 +124,7 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 # generate man page
 %{pyver_bin} setup.py build_sphinx -b man
 install -p -D -m 644 doc/build/man/glare.1 %{buildroot}%{_mandir}/man1/glare.1
+%endif
 
 %check
 export PYTHON=%{pyver_bin}
@@ -133,12 +138,16 @@ export PYTHON=%{pyver_bin}
 %{pyver_sitelib}/%{sname}
 %{pyver_sitelib}/*.egg-info
 %{_sysconfdir}/bash_completion.d
+%if 0%{?with_doc}
 %{_mandir}/man1/glare.1.gz
+%endif
 %{_bindir}/glare
 %{_bindir}/glare-%{pyver}
 
+%if 0%{?with_doc}
 %files doc
 %doc doc/build/html
 %license LICENSE
+%endif
 
 %changelog
