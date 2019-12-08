@@ -12,7 +12,12 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global sname glareclient
+# oslosphinx do not work with sphinx > 2
+%if %{pyver} == 3
+%global with_doc 0
+%else
 %global with_doc 1
+%endif
 
 Name:    python-glareclient
 Version: XXX
