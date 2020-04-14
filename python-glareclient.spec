@@ -33,9 +33,7 @@ Command Line Interface (CLI) library and openstackclient plugin.
 %package -n python%{pyver}-%{sname}
 Summary: Python API and CLI for OpenStack Glare
 %{?python_provide:%python_provide python%{pyver}-%{sname}}
-%if %{pyver} == 3
 Obsoletes: python2-%{sname} < %{version}-%{release}
-%endif
 BuildRequires:       python%{pyver}-devel
 BuildRequires:       python%{pyver}-setuptools
 BuildRequires:       python%{pyver}-pbr
@@ -58,12 +56,7 @@ BuildRequires:       python%{pyver}-testscenarios
 BuildRequires:       python%{pyver}-testtools
 BuildRequires:       python%{pyver}-mock
 
-# Handle python2 exception
-%if %{pyver} == 2
-BuildRequires:       python-requests-mock
-%else
 BuildRequires:       python%{pyver}-requests-mock
-%endif
 
 Requires:       python%{pyver}-cliff >= 2.3.0
 Requires:       python%{pyver}-keystoneauth1 >= 3.4.0
