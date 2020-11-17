@@ -39,7 +39,7 @@ Obsoletes: python2-%{sname} < %{version}-%{release}
 BuildRequires:       python3-devel
 BuildRequires:       python3-setuptools
 BuildRequires:       python3-pbr
-BuildRequires:       git
+BuildRequires:       git-core
 BuildRequires:       python3-cliff >= 2.3.0
 BuildRequires:       python3-keystoneclient >= 1:3.8.0
 BuildRequires:       python3-openstackclient >= 1.5.0
