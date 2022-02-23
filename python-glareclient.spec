@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0xc31292066be772022438222c184fd3e1edf21a78
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global sname glareclient
@@ -7,8 +7,8 @@
 %global with_doc 0
 
 Name:    python-glareclient
-Version: XXX
-Release: XXX
+Version: 0.5.3
+Release: 2%{?dist}
 Summary: Python API and CLI for OpenStack Glare
 
 License: ASL 2.0
@@ -151,3 +151,8 @@ export PYTHON=%{__python3}
 %endif
 
 %changelog
+* Wed Feb 23 2022 Jose Castro Leon <jose.castro.leon@cern.ch> 0.5.3-2
+- Fix gpg signature
+
+* Tue Aug 21 2018 RDO <dev@lists.rdoproject.org> 0.5.3-1
+- Update to 0.5.3
