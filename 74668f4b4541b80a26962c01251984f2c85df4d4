@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53bdab47_a6ff3783",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2022-02-24T08:40:31Z",
+      "side": 1,
+      "message": "You\u0027ll need to squash with https://review.rdoproject.org/r/c/openstack/glareclient-distgit/+/39761/1",
+      "revId": "74668f4b4541b80a26962c01251984f2c85df4d4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
