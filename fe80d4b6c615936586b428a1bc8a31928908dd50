@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "789a87db_fe92a454",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-03-16T11:54:33Z",
+      "side": 1,
+      "message": "We can abandon this one as the NVR already exists for CS8 and CS9 [1]\nI cross-tagged it\n\n[1] https://cbs.centos.org/koji/packageinfo?packageID\u003d6218",
+      "revId": "fe80d4b6c615936586b428a1bc8a31928908dd50",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
